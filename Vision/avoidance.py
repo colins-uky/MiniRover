@@ -2,9 +2,16 @@ import cv2 as cv
 import pyrealsense2 as rs
 import numpy as np
 
+# Initialize global variables
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+
+
+
 
 class RealSense:
-    def __init__(self, width, height, fps):
+    def __init__(self, width:int, height:int, fps:int):
         self.pipeline = rs.pipeline()
         
         config = rs.config()
@@ -15,7 +22,8 @@ class RealSense:
         self.width = width
         self.height = height
         self.fps = fps
-    
+        self.midwidth = width // 2
+        self.midheight = height // 2
     
     
     
@@ -40,6 +48,18 @@ class RealSense:
         cv.imshow('Depth', self.depth_color_image)
 
 
+    def getDistance(self, x:int, y:int):
+        return self.depth_frame.get_distance(x, y)
+    
+    
+    def drawPoint(self, x:int, y:int, image:str, color:tuple):
+        if image == 'color':
+            cv.circle(self.color_image, (x, y), 1, color, 5)
+        elif image == 'depth':
+            cv.circle(self.depth_color_image, (x, y), 1, color, 5)
+        else:
+            print("RealSense.drawPoint() ERROR: Not a valid image.")    
+    
 def main():
     
     realsense = RealSense(1280, 720, 6)
@@ -48,9 +68,20 @@ def main():
         realsense.getFrames()
 
         
+        print(realsense.getDistance(realsense.midwidth, realsense.midheight))
+        
+        realsense.drawPoint(realsense.midwidth, realsense.midheight, 'depth', GREEN)
+        
+        
+        
+        
+        
         realsense.showImages()
         
+        
+        
         if cv.waitKey(1) & 0xFF == ord('q'):
+            print("Quitting...")
             break
         
     realsense.pipeline.stop()

@@ -9,7 +9,11 @@ def generate_launch_description():
         name="joy_node",
     )
 
-
+    twist_node = Node(
+        package="teleop_twist_joy",
+        executable="teleop_node",
+        name="twist_node",
+    )
 
 
 
@@ -28,4 +32,5 @@ def generate_launch_description():
     # Return list of nodes to run
     return LaunchDescription([
         joy_node,
+        twist_node,
     ])

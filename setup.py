@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'ball_node = minibot.distance_to_ball:main',
+            'qr_detector = minibot.qr_detector:main',
         ],
     },
 )

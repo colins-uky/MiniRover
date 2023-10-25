@@ -9,8 +9,8 @@ def generate_launch_description():
 
     camera_node = Node(
         package="minibot",
-        executable="ball_node",
-        name="ball_node",
+        executable="qr_detector",
+        name="qr_detector",
     )
 
 

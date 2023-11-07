@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
             'ball_node = minibot.distance_to_ball:main',
             'qr_detector = minibot.qr_detector:main',
+            'imu_echo = minibot.imu_echo:main',
         ],
     },
 )

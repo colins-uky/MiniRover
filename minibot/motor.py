@@ -1,8 +1,25 @@
 import rclpy
 from rclpy.node import Node
-
+import serial
+import time
 from std_msgs.msg import String
 
+
+serial_port = serial.Serial(
+    port="/dev/ttyTHS1",
+    baudrate=115200,
+    bytesize=serial.EIGHTBITS,
+    parity=serial.PARITY_NONE,
+    stopbits=serial.STOPBITS_ONE,
+)
+# Wait a second to let the port initialize
+time.sleep(1)
+
+# Send a simple header
+serial_port.write("M1050105010501050\r\n".encode())
+time.sleep(2)
+
+serial_port.write("M0000000000000000\r\n".encode())
 
 # ROS2 Node to control 4 drive motors
 class MotorNode:

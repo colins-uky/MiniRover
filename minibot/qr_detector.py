@@ -36,8 +36,16 @@ class RealSense(Node):
         bridge = CvBridge()
         cv_image = bridge.imgmsg_to_cv2(msg, "bgr8")
 
-        retval, decoded_info, points, qr_bin = self.qr.detectAndDecodeMulti(cv_image)
-        
+
+        decoded_info = ""
+        points = []
+        qr_bin = ""
+
+        try:
+
+            decoded_info, points, qr_bin = self.qr.detectAndDecode(cv_image)
+        except:
+            print("QR_NODE_ERROR: Unknown error trying to get QR code data.")
         
 
         cv2.imshow("Camera Image", cv_image)

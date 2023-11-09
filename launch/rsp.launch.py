@@ -9,6 +9,8 @@ from launch_ros.actions import Node
 
 import xacro
 
+xacro_filepath = "/home/colin/Desktop/ros2_ws/src/minibot/description/robot.urdf.xacro"
+
 
 def generate_launch_description():
 
@@ -19,7 +21,7 @@ def generate_launch_description():
     # Process the URDF file
     pkg_path = os.path.join(get_package_share_directory('minibot'))
     xacro_file = os.path.join(pkg_path,'description','robot.urdf.xacro')
-    robot_description_config = xacro.process_file("/home/colin/Desktop/ros2_ws/src/minibot/description/robot.urdf.xacro").toxml()
+    robot_description_config = xacro.process_file(xacro_file).toxml()
     #robot_description_config = Command(['xacro ', xacro_file, ' use_ros2_control:=', use_ros2_control, ' sim_mode:=', use_sim_time])
     
     # Create a robot_state_publisher node

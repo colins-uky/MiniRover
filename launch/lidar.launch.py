@@ -5,6 +5,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 import os
 from ament_index_python import get_package_share_directory
 
+from minibot.config_loader import return_config
 
 # This launch file runs the ros2 rplidar_ros rplidar_composition node and publishes its message to
 # the /scan topic
@@ -20,6 +21,10 @@ from ament_index_python import get_package_share_directory
 serial_port = "/dev/ttyUSB0"
 
 def generate_launch_description():
+
+    cfg = return_config()["lidar_node"]
+
+
 
     rplidar_node = Node(
         package="rplidar_ros",

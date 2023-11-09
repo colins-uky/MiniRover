@@ -15,6 +15,3 @@ def return_config():
 
     return cfg
 
-
-x = return_config()
-print(x)

@@ -1,12 +1,14 @@
 lidar_node:
+  serial_port: /dev/ttyUSB0
 
 
-
-camera_node:
-
+realsense_node:
+  serial_port: /dev/ttyUSB1
 
 
 motor_node:
-
+  serial_port: /dev/ttyTHS1
+  baud_rate: 115200
+  
 
 

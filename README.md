@@ -4,11 +4,21 @@ Minibot is a ROS2 package that uses the ROS2 NAV2 stack and slam_toolbox to perf
 
 ## Contents
 
-1. [Materials](#materials)
-2. [Prerequisites](#prerequisites)
-3. [Installation](#installation)
-4. [Launch Minibot](#launch-minibot)
-5. [Credits](#credits)
+1. [Overview](#overview)
+2. [Materials](#materials)
+3. [Prerequisites](#prerequisites)
+4. [Installation](#installation)
+5. [Launch Minibot](#launch-minibot)
+6. [Credits](#credits)
+
+
+
+## Overview
+
+Minibot uses pre compiled package ROS nodes to publish data from the sensors onboard the bot. Users can interact with Minibot by sending a `home` and `target` pose. The Minibot will initialize its own `home` position by default (as the pose Minibot is in when powered on). Once a `target` has been provided, Minibot will use SLAM to find an efficient route from `home` to `target`.
+
+
+If no `target` pose is provided for `2` minutes, Minibot will (do something interesting idk blink, play noise, etc)
 
 ## Materials
 

@@ -31,7 +31,7 @@ def generate_launch_description():
         executable="rplidar_composition",
         name="lidar_node",
         parameters=[
-            {"serial_port": serial_port},
+            {"serial_port": cfg["serial_port"]},
         ]
     )
 

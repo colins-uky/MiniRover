@@ -45,7 +45,7 @@ from config_loader import return_config
 
 
 
-# Store some common motor strings and encode to bytes
+# Store common motor strings and encode to bytes
 HALT = "M0000000000000000\r\n".encode()
 
 
@@ -93,6 +93,26 @@ class MotorNode:
 
     def STOP_ALL_MOTORS(self):
         self.serial.write(HALT)
+
+
+    def calculate_motor_speed(self, velocity: float):
+        directional_bit = '1'
+        
+        # negative velocity (Reverse)
+        if velocity < 0:
+            directional_bit = '0'
+
+        # If velocity is [0, 1] then we can normalize it to [0, 255] by multiplying by 255.
+        normalized_vel = f"{int(abs(velocity) * 255):03d}"
+
+        return directional_bit + normalized_vel
+
+        
+
+
+    def send_speed_to_serial(self, m1: str, m2: str, m3: str, m4: str):
+        self.serial.write(f"M{m1}{m2}{m3}{m4}\r\n".encode())
+
 
     def motor_callback(self, msg):
         self.get_logger().info('I heard: "%s"' % msg.data)

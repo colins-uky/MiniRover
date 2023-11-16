@@ -9,10 +9,15 @@ from launch_ros.actions import Node
 
 import xacro
 
+from minibot.config_loader import return_config
+
 xacro_filepath = "/home/colin/Desktop/ros2_ws/src/minibot/description/robot.urdf.xacro"
 
+cfg = return_config()
 
 def generate_launch_description():
+
+    
 
     # Check if we're told to use sim time
     use_sim_time = LaunchConfiguration('use_sim_time')

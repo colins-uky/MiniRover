@@ -9,6 +9,7 @@ realsense_node:
 motor_node:
   serial_port: /dev/ttyTHS1
   baud_rate: 115200
-  
+
+xacro_filepath: /home/colin/Desktop/ros2_ws/src/minibot/description/robot.urdf.xacro
 
 

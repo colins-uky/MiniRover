@@ -52,6 +52,24 @@ This package requires ROS2 Foxy Fitzroy, which can only be installed on **Ubuntu
 
 An installation guide for ROS2 Foxy Fitzroy can be found [here](https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html)
 
+Run the ROS2 talker and listener demo in the `Try some examples` section to ensure ROS2 Foxy was installed correctly.
+
+### 3. Set Up A ROS2 Workspace
+
+#### Install colcon
+
+```bash
+sudo apt install python3-colcon-common-extensions
+```
+
+#### Build the workspace
+```bash
+cd ~/Desktop
+mkdir -p ros2_ws/src
+cd ros2_ws
+colcon build
+```
+
 ## Installation
 
 ### 1. Clone the Repo
@@ -62,15 +80,38 @@ cd ~/Desktop/ros2_ws/src/
 git clone https://github.com/colins-uky/minibot.git
 ```
 
-### 2. Install Dependencies
+### 2. Install ROS Dependencies
 
 Minibot borrows a few ROS2 nodes from other packages for publishing raw sensor data. Many of these packages are built by the creators of the sensors themselves.
 
 #### rplidar_ros
 
 ```bash
-sudo apt install blahblahblah
+sudo apt install ros-foxy-rplidar-ros
 ```
+
+### 3. Install Other Dependencies
+
+Gazebo packages are for developer use and are not required on the robot computer.
+
+#### Xacro & Joint State Publisher GUI
+
+```bash
+sudo apt install ros-foxy-xacro ros-foxy-joint-state-publisher-gui
+```
+
+#### Gazebo Simulation Tool
+
+```bash
+sudo apt install ros-foxy-gazebo-ros-pkgs
+```
+
+#### ROS2 Control
+```bash
+sudo apt install ros-foxy-ros2-control ros-foxy-ros2-controllers ros-foxy-gazebo-ros2-control
+```
+
+
 
 ## Launch Minibot
 

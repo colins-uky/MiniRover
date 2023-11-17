@@ -1,5 +1,8 @@
 lidar_node:
   serial_port: /dev/ttyUSB0
+  frame_id: laser_frame
+  angle_compensate: true
+  scan_mode: Standard
 
 
 realsense_node:
@@ -10,6 +13,5 @@ motor_node:
   serial_port: /dev/ttyTHS1
   baud_rate: 115200
 
-xacro_filepath: /home/colin/Desktop/ros2_ws/src/minibot/description/robot.urdf.xacro
 
 

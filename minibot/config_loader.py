@@ -15,3 +15,9 @@ def return_config():
 
     return cfg
 
+def return_pkg_path():
+    ws_path = get_package_share_directory("minibot").replace("/install/minibot/share/minibot", "")
+
+    pkg_path = os.path.join(ws_path, "src", "minibot")
+
+    return pkg_path

@@ -9,11 +9,7 @@ from launch_ros.actions import Node
 
 import xacro
 
-from minibot.config_loader import return_config
 
-xacro_filepath = "/home/colin/Desktop/ros2_ws/src/minibot/description/robot.urdf.xacro"
-
-cfg = return_config()
 
 def generate_launch_description():
 
@@ -24,7 +20,10 @@ def generate_launch_description():
     use_ros2_control = LaunchConfiguration('use_ros2_control')
 
     # Process the URDF file
-    pkg_path = os.path.join(get_package_share_directory('minibot'))
+
+    ws_path = get_package_share_directory("minibot").replace("/install/minibot/share/minibot", "")
+
+    pkg_path = os.path.join(ws_path, "src", "minibot")
     xacro_file = os.path.join(pkg_path,'description','robot.urdf.xacro')
     robot_description_config = xacro.process_file(xacro_file).toxml()
     #robot_description_config = Command(['xacro ', xacro_file, ' use_ros2_control:=', use_ros2_control, ' sim_mode:=', use_sim_time])

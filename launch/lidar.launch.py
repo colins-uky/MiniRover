@@ -32,6 +32,10 @@ def generate_launch_description():
         name="lidar_node",
         parameters=[
             {"serial_port": cfg["serial_port"]},
+            {"frame_id": cfg["frame_id"]},
+            {"angle_compensate": cfg["angle_compensate"]},
+            {"scan_mode": cfg["scan_mode"]},
+
         ]
     )
 

@@ -19,7 +19,8 @@ def generate_launch_description():
         parameters=[
             {"axis_linear.x": 4},
             {"axis_angular.yaw": 3}
-        ]
+        ],
+        remappings=[('/cmd_vel', '/diff_controller/cmd_vel_unstamped')]
     )
 
 

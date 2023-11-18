@@ -54,7 +54,24 @@ An installation guide for ROS2 Foxy Fitzroy can be found [here](https://docs.ros
 
 Run the ROS2 talker and listener demo in the `Try some examples` section to ensure ROS2 Foxy was installed correctly.
 
-### 3. Set Up A ROS2 Workspace
+### 3. Install Dev Dependencies (Optional)
+
+These tools help the development process of the robot. Both are only really useful with a GUI. So install and use them accordingly. 
+
+#### Install Gazebo Simulation Tool (Optional)
+
+```bash
+sudo apt install ros-foxy-gazebo-ros-pkgs
+```
+
+#### Install rqt (Optional)
+
+```bash
+sudo apt update
+sudo apt install ~nros-foxy-rqt*
+```
+
+### 4. Set Up A ROS2 Workspace
 
 #### Install colcon
 
@@ -100,11 +117,7 @@ Gazebo packages are for developer use and are not required on the robot computer
 sudo apt install ros-foxy-xacro ros-foxy-joint-state-publisher-gui
 ```
 
-#### Gazebo Simulation Tool
 
-```bash
-sudo apt install ros-foxy-gazebo-ros-pkgs
-```
 
 #### ROS2 Control
 ```bash

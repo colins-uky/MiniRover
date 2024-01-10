@@ -5,6 +5,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 import os
 from ament_index_python import get_package_share_directory
 
+#https://roverrobotics.com/blogs/guides/fusing-imu-encoders-with-ros-robot-localization
+
 def generate_launch_description():
 
     camera_node = Node(

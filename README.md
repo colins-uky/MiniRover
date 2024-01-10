@@ -107,6 +107,12 @@ Minibot borrows a few ROS2 nodes from other packages for publishing raw sensor d
 sudo apt install ros-foxy-rplidar-ros
 ```
 
+#### slam_toolbox
+
+```bash
+sudo apt install ros-foxy-slam-toolbox
+```
+
 ### 3. Install Other Dependencies
 
 Gazebo packages are for developer use and are not required on the robot computer.

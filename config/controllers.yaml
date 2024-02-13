@@ -18,17 +18,17 @@ diff_controller:
     publish_rate: 50.0
     base_frame_id: base_link
 
-    left_wheel_names: ["front_left_wheel_joint", "back_left_wheel_joint"]
-    right_wheel_names: ["front_right_wheel_joint", "back_right_wheel_joint"]
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
 
-    wheel_separation: 0.5
-    wheel_radius: 0.15
+    wheel_separation: 0.266
+    wheel_radius: 0.16
 
     use_stamped_vel: false
 
     # open_loop: false    
 
-    wheels_per_side: 2
+    # wheels_per_side: x
     # wheel_separation_multiplier: x
     # left_wheel_radius_multiplier: x
     # right_wheel_radius_multiplier: x

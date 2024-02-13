@@ -1,6 +1,6 @@
 # Minibot
 
-Minibot is a ROS2 package that uses the ROS2 NAV2 stack and slam_toolbox to perform Simultaneous Localization and Mapping. This package was created in coordination by members of the Kentucky Organization of Robotics and Automation (KORA).
+Minibot is a ROS2 package that uses the ROS2 NAV2 stack and slam_toolbox to perform Simultaneous Localization and Mapping. This package was created by me in coordination with members of the Kentucky Organization of Robotics and Automation (KORA) competitive robotics club at the University of Kentucky.
 
 ## Contents
 
@@ -15,16 +15,17 @@ Minibot is a ROS2 package that uses the ROS2 NAV2 stack and slam_toolbox to perf
 
 ## Overview
 
-Minibot uses pre compiled package ROS nodes to publish data from the sensors onboard the bot. Users can interact with Minibot by sending a `home` and `target` pose. The Minibot will initialize its own `home` position by default (as the pose Minibot is in when powered on). Once a `target` has been provided, Minibot will use SLAM to find an efficient route from `home` to `target`.
+Minibot uses pre compiled package ROS nodes to publish data from the sensors onboard the bot. Users can interact with Minibot by sending a `home` and `target` pose. The Minibot will initialize its own `home` position by default (as the pose Minibot is in when powered on). Once a `target` has been provided, Minibot will use SLAM to find an efficient and safe route from `home` to `target`.
 
 
 If no `target` pose is provided for `2` minutes, Minibot will (do something interesting idk blink, play noise, etc)
 
 ## Materials
 
-We will be using the following materials for this minibot:
+### We will be using the following materials for this SLAM autonomous robot:
 
-
+ As you can see, this package was built with a two-wheel differential drive robot in mind. 
+* Note: Additional wheels or major chassis differences will require some changes to the robot description and which ROS2 Control package to use.
 
 
 ## Prerequisites

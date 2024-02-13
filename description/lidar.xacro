@@ -4,25 +4,27 @@
     <joint name="lidar_joint" type="fixed">
         <parent link="chassis" />
         <child link="lidar_frame" />
-        <origin xyz="0.1 0 0.08" rpy="0 0 0" />
+        <origin xyz="0.225 0 0.2" rpy="0 0 0" />
     </joint>
 
     <link name="lidar_frame">
         <visual>
+            <origin xyz="0 0 -0.05" />
             <geometry>
-                <cylinder radius="0.057" length="0.07" />
+                <cylinder radius="0.057" length="0.1"/>
             </geometry>
             <material name="magenta" />
         </visual>
 
         <collision>
+            <origin xyz="0 0 -0.05" />
             <geometry>
-                <cylinder radius="0.057" length="0.04" />
+                <cylinder radius="0.057" length="0.1" />
             </geometry>
         </collision>
 
-        <xacro:inertial_cylinder mass="0.1" length="0.04" radius="0.057">
-            <origin xyz="0 0 0" rpy="0 0 0" />
+        <xacro:inertial_cylinder mass="0.1" length="0.1" radius="0.057">
+            <origin xyz="0 0 -0.05" rpy="0 0 0" />
         </xacro:inertial_cylinder>
 
     </link>
@@ -42,7 +44,7 @@
                     </horizontal>
                 </scan>
                 <range>
-                    <min>0.4 </min>
+                    <min>0.2 </min>
                     <max> 12 </max>
                 </range>
             </ray>
